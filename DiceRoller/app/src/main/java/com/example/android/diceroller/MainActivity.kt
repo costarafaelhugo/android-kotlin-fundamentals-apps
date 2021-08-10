@@ -18,6 +18,7 @@ package com.example.android.diceroller
 
 import android.os.Bundle
 import android.widget.Button
+import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -28,10 +29,12 @@ import kotlinx.android.synthetic.main.activity_main.*
  */
 class MainActivity : AppCompatActivity() {
 
+    lateinit var diceImage: ImageView
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        diceImage = findViewById(R.id.dice_image)
         // Get the Button view from the layout and assign a click
         // listener to it.
         val rollButton: Button = findViewById(R.id.roll_button)
@@ -45,6 +48,9 @@ class MainActivity : AppCompatActivity() {
         // Toast.makeText(this, "button clicked",
         //  Toast.LENGTH_SHORT).show()
         val randomInt = (1..6).random()
+
+        var diceImage: ImageView = findViewById(R.id.dice_image)
+
 
         val drawableResource = when (randomInt) {
             1 -> R.drawable.dice_1
